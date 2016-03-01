@@ -72,6 +72,8 @@ public class DisplayHeader extends JPanel {
 			new Rectangle(130, 30, 100, 20);
 	private static final Rectangle TIMER_LABEL_POS =
 			new Rectangle(250, 30, 100, 20);
+	private static final Rectangle SHOW_BOMB_TILE_POS =
+			new Rectangle(10, 50, 120, 20);
 
 	// size of display header
 	private static final Dimension SIZE = new Dimension(375, 75);
@@ -83,6 +85,7 @@ public class DisplayHeader extends JPanel {
 	private final JLabel m_hiddenCountLabel;
 	private final JLabel m_revealedCountLabel;
 	private final JLabel m_timerLabel;
+	final JCheckBox m_showBombTileCheckBox;
 
 	// data relating to the timer
 	private final long m_startTime;
@@ -123,6 +126,10 @@ public class DisplayHeader extends JPanel {
 		m_timerLabel = new JLabel();
 		m_timerLabel.setBounds(TIMER_LABEL_POS);
 		add(m_timerLabel);
+
+		m_showBombTileCheckBox = new JCheckBox("show mines");
+		m_showBombTileCheckBox.setBounds(SHOW_BOMB_TILE_POS);
+		add(m_showBombTileCheckBox);
 
 		// setup timer
 		m_startTime = System.currentTimeMillis();

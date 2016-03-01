@@ -15,6 +15,9 @@ import java.awt.geom.Rectangle2D;
  */
 public class BombTile extends Tile {
 
+	//variable which allows the user to show the tile
+	public boolean m_show_bomb_tile ;
+
 	/**
 	* Constructs object
 	*
@@ -31,7 +34,8 @@ public class BombTile extends Tile {
 	*/
 	@Override
 	public void draw(Graphics g) {
-		if (isRevealed()) {
+	
+		if ( isRevealed() || m_show_bomb_tile ) {
 			g.setColor(Color.RED);
 		} else if (isDiffused()) {
 			g.setColor(DIFFUSED_COLOUR);
@@ -70,6 +74,14 @@ public class BombTile extends Tile {
 	@Override
 	public boolean isWinning() {
 		return isDiffused();
+	}
+
+	/**
+	* shows the tile if s is true 
+	*/
+	public void show( boolean s ) {
+		m_show_bomb_tile = s ;
+		draw(getGraphics());
 	}
 
 }

@@ -40,11 +40,15 @@ public abstract class Tile extends JPanel {
 	protected void setRevealed(boolean revealed) {
 		m_revealed = revealed;
 	}
+
+	
+	
 	
 	//size constants
 	public static final int PADDING = 2;
 	public static final int TILE_LENGTH = 20;
 
+	
 	//Position and state of tile
 	private final boolean m_bomb;
 	private final Point m_position;

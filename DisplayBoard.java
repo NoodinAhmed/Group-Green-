@@ -10,6 +10,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.*;
+
 
 /**
  * @class DisplayBoard
@@ -41,6 +43,18 @@ public class DisplayBoard extends JPanel implements MouseListener {
 		m_header.setHidden(boardSize * boardSize);
 		m_header.setRevealed(0);
 		m_header.setDiffused(0);
+
+	    header.m_showBombTileCheckBox.addItemListener(new ItemListener() {
+
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(e.getStateChange() == ItemEvent.SELECTED) {
+			m_board.showBombTile(true);
+		}
+		else m_board.showBombTile(false);
+            }
+        });
+
 	}
 
 	/**
@@ -91,7 +105,10 @@ public class DisplayBoard extends JPanel implements MouseListener {
 		if (m_board.isWon()) {
 			m_mainForm.gameOver(true);
 		}
+		
 	}
+
+	
 	
 	//Unused event handlers
 

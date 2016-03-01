@@ -68,6 +68,7 @@ public class Board {
     private int m_diffused;
     private int m_hidden;
     private int m_revealed;
+    
 
 	/**
 	* Adds all tiles to a DisplayBoard object
@@ -82,6 +83,8 @@ public class Board {
             }
         }
     }
+
+
 	
     /**
      * Constructs board object
@@ -195,6 +198,29 @@ public class Board {
             }
         }
     }
+
+	
+   /**
+
+     * show a bombtile
+
+     */
+    public void showBombTile( boolean s ) {
+
+	
+	 for (Tile[] tileRow : m_tiles) {
+            for (Tile tile : tileRow) {
+               if( tile != null && tile.isBomb()  ){
+			tile.show(s);
+		}
+            }
+        }
+
+       
+    }
+
+
+
 
     /**
      * Diffuses a tile
