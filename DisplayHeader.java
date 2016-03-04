@@ -1,7 +1,7 @@
 /**
  * @file DisplayHeader.java
- * @author Hal
- * @author Will
+ * @author Ayoub
+ * @author Adina
  * @date 1 Dec 2015
  * @brief Shows information to user about kablewie board
  */
@@ -74,8 +74,10 @@ public class DisplayHeader extends JPanel {
 			new Rectangle(250, 30, 100, 20);
 	private static final Rectangle SHOW_BOMB_TILE_POS =
 			new Rectangle(10, 50, 120, 20);
-
-	// size of display header
+        private static final Rectangle COMPUTER_POS =
+			new Rectangle(130, 50, 100, 20);
+	
+        // size of display header
 	private static final Dimension SIZE = new Dimension(375, 75);
 
 	// widgets to display
@@ -86,6 +88,7 @@ public class DisplayHeader extends JPanel {
 	private final JLabel m_revealedCountLabel;
 	private final JLabel m_timerLabel;
 	final JCheckBox m_showBombTileCheckBox;
+        final JCheckBox m_ComputerCheckBox;
 
 	// data relating to the timer
 	private final long m_startTime;
@@ -131,6 +134,10 @@ public class DisplayHeader extends JPanel {
 		m_showBombTileCheckBox.setBounds(SHOW_BOMB_TILE_POS);
 		add(m_showBombTileCheckBox);
 
+                m_ComputerCheckBox = new JCheckBox("randomize");
+		m_ComputerCheckBox.setBounds(COMPUTER_POS);
+		add(m_ComputerCheckBox);
+                
 		// setup timer
 		m_startTime = System.currentTimeMillis();
 
