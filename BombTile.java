@@ -35,7 +35,7 @@ public class BombTile extends Tile {
 	@Override
 	public void draw(Graphics g) {
 	
-		if ( isRevealed() || m_show_bomb_tile ) {
+		if ( isRevealed() || isCheating() ) {
 			g.setColor(Color.RED);
 		} else if (isDiffused()) {
 			g.setColor(DIFFUSED_COLOUR);
@@ -75,6 +75,16 @@ public class BombTile extends Tile {
 	public boolean isWinning() {
 		return isDiffused();
 	}
+	
+	/**
+	* state of the show function
+	*
+	* @return True if show function is on, false otherwise
+	*/
+	public boolean isCheating() {
+		return m_show_bomb_tile;
+	}
+	
 
 	/**
 	* shows the tile if s is true 
