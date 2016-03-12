@@ -44,7 +44,7 @@ public class DisplayBoard extends JPanel implements MouseListener {
 		m_header.setRevealed(0);
 		m_header.setDiffused(0);
 
-	    header.m_showBombTileCheckBox.addItemListener(new ItemListener() {
+	    m_header.m_showBombTileCheckBox.addItemListener(new ItemListener() {
 
             @Override
             public void itemStateChanged(ItemEvent e) {
